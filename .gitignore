@@ -1,4 +1,3 @@
-
 # Environnements virtuels et dépendances
 .venv/
 .python-version
@@ -8,21 +7,14 @@ uv.lock
 .DS_Store
 *.pyc
 __pycache__/
+
 # Fichiers Word temporaires (les fichiers commençant par ~$)
 ~$*
-# Scripts de génération (optionnel, si vous ne voulez pas les publier)
+
+# Scripts de génération
 create_portfolio_presentation.py
 create_presentation.py
 apply_font.py
 revise_docx.py
 read_docx.py
 add_ethics_to_docx.py
-python-version 
-.venv/ 
-main.py 
-portfolio.docx 
-~$ints de réflexion sur le portfolio_arial.docx 
-~$rtfolio.docx 
-pyproject.toml 
-uv.lock 
-CLAUDE.md
