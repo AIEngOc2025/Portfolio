@@ -1,0 +1,180 @@
+{
+  "profile": {
+    "name": "Christophe Mpaga",
+    "title": "AI Engineer",
+    "tagline": "Concevoir, industrialiser et déployer des agents IA en production.",
+    "location": "Rouen, France",
+    "availability": "Disponible — Mobilité France",
+    "email": "christophempaga@gmail.com",
+    "github": "https://github.com/AIEngOc2025",
+    "linkedin": "[A_COMPLETER_URL]",
+    "summary": "AI Engineer issu d'une formation OpenClassrooms, spécialisé dans la conception et l'industrialisation d'agents IA pour des contextes à forts enjeux. J'interviens sur toute la chaîne : cadrage métier, choix de modèle, fine-tuning, containerisation, déploiement cloud (GCP) et monitoring. Mon obsession : transformer un POC fragile en produit fiable, observable et conforme.",
+    "what_i_solve": [
+      "Surcharge des services d'urgence via le triage automatisé",
+      "Industrialisation de modèles LLM (fine-tuning, packaging, serving)",
+      "Conception d'architectures modulaires conteneurisées",
+      "Mise en place de pipelines CI/CD pour la donnée et le ML"
+    ]
+  },
+  "skills": {
+    "devops": {
+      "label": "DevOps",
+      "description": "Software engineering, CI/CD, containerisation.",
+      "tools": [
+        { "name": "Git", "level": "avancé" },
+        { "name": "GitHub Actions", "level": "intermédiaire" },
+        { "name": "GCP Cloud Build", "level": "intermédiaire" },
+        { "name": "Docker", "level": "intermédiaire" },
+        { "name": "Python 3.11", "level": "intermédiaire" },
+        { "name": "FastAPI", "level": "intermédiaire" }
+      ]
+    },
+    "mlops": {
+      "label": "MLOps",
+      "description": "Création, entraînement, évaluation, ajustement fin et monitoring des modèles.",
+      "tools": [
+        { "name": "MLflow", "level": "intermédiaire" },
+        { "name": "Apache Airflow", "level": "intermédiaire" },
+        { "name": "FAISS", "level": "intermédiaire" },
+        { "name": "Hugging Face Transformers", "level": "intermédiaire" },
+        { "name": "vLLM", "level": "intermédiaire" }
+      ]
+    },
+    "aiops": {
+      "label": "AIOps",
+      "description": "Création, monitoring d'applications et d'agents IA.",
+      "tools": [
+        { "name": "Prompt engineering", "level": "avancé" },
+        { "name": "Systèmes multi-agents", "level": "notions" },
+        { "name": "Red-teaming", "level": "notions" },
+        { "name": "Drift monitoring", "level": "notions" }
+      ]
+    },
+    "cloudops": {
+      "label": "CloudOps",
+      "description": "Compute, design conteneur-centric, PaaC, stockage.",
+      "tools": [
+        { "name": "Google Cloud Run", "level": "intermédiaire" },
+        { "name": "GCP Cloud Build", "level": "intermédiaire" },
+        { "name": "Vertex AI", "level": "notions" },
+        { "name": "Google Cloud Storage", "level": "intermédiaire" },
+        { "name": "GitHub Container Registry", "level": "intermédiaire" }
+      ]
+    },
+    "data_ml": {
+      "label": "Data & ML",
+      "description": "Frameworks et bibliothèques pour l'entraînement et l'inférence.",
+      "tools": [
+        { "name": "PyTorch", "level": "intermédiaire" },
+        { "name": "TensorFlow / Keras", "level": "intermédiaire" },
+        { "name": "scikit-learn", "level": "intermédiaire" },
+        { "name": "Hugging Face", "level": "intermédiaire" },
+        { "name": "Transformers", "level": "intermédiaire" },
+        { "name": "spaCy", "level": "intermédiaire" },
+        { "name": "Pandas / NumPy", "level": "avancé" }
+      ]
+    }
+  },
+  "ethics": {
+    "title": "Engagement Éthique et Conformité",
+    "content": "Je place la conformité et l'éthique au cœur de mes développements, particulièrement dans des secteurs sensibles comme la santé.",
+    "points": [
+      "Protection des données : Anonymisation native des datasets et conformité RGPD.",
+      "Sécurité : Intégration de tests de sécurité automatisés (red-teaming) pour garantir l'absence d'hallucinations dangereuses.",
+      "Transparence : Auditabilité des systèmes d'aide à la décision par la mise en place de logs d'audit et une observabilité rigoureuse."
+    ]
+  },
+  "projects": [
+    {
+      "id": "chsa-triage-agent",
+      "name": "Agent d'accueil hospitalier CHSA",
+      "role": "AI Engineer (chef de projet technique)",
+      "context": "Centre Hospitalier — orientation rapide et précise des patients au service d'accueil et d'orientation des urgences, pour résorber la surcharge.",
+      "approach": [
+        "Collecte des besoins métiers et analyse du contexte hospitalier",
+        "Audit de solutions data pour vérifier l'adéquation (flexibilité, rapidité, scalabilité, finesse technologique, observabilité)",
+        "Identification d'une solution technique : agent IA (chatbot) + interface décisionnelle",
+        "Appui stratégique et méthodologique : cadrage projet, planification POC → MVP → PROD",
+        "Contrôle du projet en termes de délais, coûts, livrables et performances"
+      ],
+      "deliverables": {
+        "POC": { "duration": "~4 semaines", "cost": "500–700 €/mois", "outputs": ["Modèle Qwen3-1.7B-Base", "Dataset 5k bilingue anonymisé", "Pipeline CI/CD"], "kpis": ["Triage : 88 %", "Latence p95 < 1 s", "Précision > 95 %", "Robuste aux hallucinations"] },
+        "MVP": { "duration": "~3–6 mois", "cost": "Modéré (optimisation GPU)", "outputs": ["Modèle validé cliniquement", "Dashboard MLflow", "Logs d'audit système"], "kpis": ["Précision > 95 %", "Robuste aux hallucinations"] },
+        "PROD": { "duration": "~6–12 mois+", "cost": "Élevé (scalabilité + haute disponibilité)", "outputs": ["Système multi-agent", "Intégration SIH (FHIR)", "Monitoring de drift"], "kpis": ["Disponibilité 99,9 %", "Sécurité totale", "Latence métier < 500 ms"] }
+      },
+      "transition_notes": {
+        "poc_to_mvp": ["Données : enrichir avec des cas d'urgence validés par des experts cliniques", "Sécurité : intégrer des tests automatisés (red-teaming) pour bloquer les hallucinations dangereuses", "Observabilité : monitoring réel via MLflow pour suivre la dérive en conditions réelles"],
+        "mvp_to_prod": ["Interopérabilité : communication avec le SIH via HL7 / FHIR (middleware complexe)", "Infra : passage à une architecture multi-région pour garantir la haute disponibilité"]
+      },
+      "github_url": "[A_COMPLETER_URL]",
+      "stack": ["vLLM", "Qwen3-1.7B-Base", "FastAPI", "Gradio", "Docker", "Google Cloud Run", "Google Cloud Storage"]
+    },
+    {
+      "id": "finetune-llm-qwen",
+      "name": "Fine-tuning d'un LLM (Qwen3-1.7B)",
+      "role": "AI Engineer",
+      "context": "Projet de formation — finetuner un LLM open-source sur un cas d'usage métier, puis le servir via une API et une UI.",
+      "highlights": [
+        "Architecture initiale monolithique conteneurisée, échec de déploiement (timeout vLLM ~240 s)",
+        "Refactor vers une architecture modulaire multi-stage : vLLM + modèle dans un conteneur, FastAPI dans un autre, UI dans un troisième, déployés sur Cloud Run (GCP)",
+        "Stockage des poids du modèle sur GCS",
+        "Bilan : la modularité a apporté découplage, observabilité et itération indépendante par brique"
+      ],
+      "evolution_proposals": [
+        "Fusionner API + UI en un seul module",
+        "Ajouter une base SQL pour la persistance des logs",
+        "Migrer l'UI de Streamlit vers React.js",
+        "Architecture agentique cible : cerveau LLM + orchestrateur LangGraph + outils"
+      ],
+      "github_url": "https://github.com/AIEngOc2025/agent-triage-hospitalier.git",
+      "stack": ["vLLM", "Qwen3-1.7B-Base", "FastAPI", "Gradio", "Python 3.11", "Docker (multi-stage)", "Google Cloud Run", "Google Cloud Storage"]
+    },
+    {
+      "id": "credit-scoring",
+      "name": "Scoring de crédit",
+      "role": "AI Engineer",
+      "context": "Projet de classification ML pour le scoring de crédit bancaire.",
+      "highlights": [
+        "Application de classification des profils clients (probabilité d'attrition)",
+        "Modèle LightGBM avec entraînement par validation croisée",
+        "Exposition du modèle via un endpoint FastAPI conteneurisé",
+        "Déploiement du modèle sur GCP"
+      ],
+      "github_url": "https://github.com/AIEngOc2025/MLOps.git",
+      "stack": ["Python", "LightGBM", "FastAPI", "Docker", "GCP"]
+    },
+    {
+      "id": "rag-paris-events",
+      "name": "Système RAG (Événements Parisiens)",
+      "role": "AI Engineer",
+      "context": "Système RAG permettant d'interroger des événements culturels parisiens via API.",
+      "highlights": [
+        "Architecture RAG (Retrieval Augmented Generation)",
+        "Source de données : OpenData Paris",
+        "Technologie : FAISS (Vecteur DB), Mistral Small (LLM), PostgreSQL",
+        "API FastAPI pour la consultation"
+      ],
+      "github_url": "https://github.com/AIEngOc2025/RAG.git",
+      "stack": ["FastAPI", "FAISS", "Mistral Small", "PostgreSQL"]
+    }
+  ],
+  "experience": {
+    "teaching": [
+      { "role": "Enseignant — Mathématiques (CAP / BP)", "highlights": "Pédagogie, vulgarisation, structuration de progressions." },
+      { "role": "Enseignant — Bases de données (M1, M2)", "highlights": "Modélisation, SQL, conception de schémas, enseignement théorique et pratique." },
+      { "role": "Enseignant — Machine Learning & Intelligence Artificielle (M1, M2)", "highlights": "ML supervisé / non supervisé, introduction à l'IA, vulgarisation auprès d'étudiants non spécialistes." }
+    ]
+  },
+  "soft_skills": [
+    { "name": "Esprit d'analyse et résolution de problèmes", "example": "Diagnostic de l'échec de déploiement (timeout vLLM) et refactorisation architecturale." },
+    { "name": "Curiosité intellectuelle et apprentissage continu", "example": "Exploration proactive de vLLM, LangGraph, FastAPI sur Cloud Run, Vertex AI." },
+    { "name": "Vulgarisation de concepts IA complexes", "example": "Enseignement du ML/IA auprès d'étudiants non spécialistes." },
+    { "name": "Autonomie et gestion de projet", "example": "Conduite du projet CHSA (cadrage à la livraison du POC)." },
+    { "name": "Créativité et pensée out-of-the-box", "example": "Proposition d'architectures agentiques (LangGraph + outils) en alternative au pipeline linéaire." }
+  ],
+  "education": [
+    { "name": "Parcours AI Engineer", "school": "OpenClassrooms", "year": "2025-2026", "highlights": ["Cadrage de projets IA", "DevOps/MLOps/AIOps", "Frameworks ML", "Déploiement Docker/Cloud Run"] },
+    { "name": "Diplômes antérieurs", "school": "[A_COMPLETER_DIPLOME]", "year": "[A_COMPLETER_ANNEE]" }
+  ],
+  "certifications": []
+}

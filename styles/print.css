@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Version imprimable — utilisée par Ctrl+P / génération PDF ATS-friendly
+   ========================================================================== */
+
+@media print {
+  /* Reset couleurs pour économiser l'encre + meilleure lisibilité */
+  :root {
+    --bg: #fff;
+    --bg-elevated: #fff;
+    --bg-muted: #f6f6f6;
+    --text: #000;
+    --text-muted: #333;
+    --text-faint: #555;
+    --border: #ddd;
+    --accent: #1a4ea8;
+    --accent-strong: #103a85;
+    --accent-soft: #e6efff;
+    --shadow: none;
+    --shadow-sm: none;
+    --shadow-lg: none;
+  }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Pas de nav ni de toggle en version imprimée */
+  .site-header,
+  .site-footer,
+  .theme-toggle,
+  .skip-link,
+  .todo-banner {
+    display: none !important;
+  }
+
+  /* Pleine largeur */
+  .container { max-width: none; padding: 0; }
+  section {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+  section:last-of-type { border-bottom: none; }
+
+  /* Hero compact */
+  .hero { padding: 1rem 0; }
+  .hero h1 { font-size: 24pt; }
+  .hero .tagline { font-size: 12pt; }
+  .hero .cta { display: none; }
+
+  /* Liens : afficher l'URL après le texte */
+  a {
+    color: #000;
+    text-decoration: underline;
+    border-bottom: none;
+  }
+  a[href^="http"]::after,
+  a[href^="https"]::after,
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+    word-break: break-all;
+  }
+  a[href^="#"]::after { content: ""; }
+
+  /* Cards : bordures fines, pas d'ombre, pas de hover */
+  .card,
+  .skill-group,
+  .contact-card,
+  .soft-skill {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+  .card:hover { box-shadow: none; transform: none; }
+
+  /* Tableaux : tout afficher, éviter coupures */
+  table { page-break-inside: avoid; }
+
+  /* Listes : pas de coupure au milieu d'un item */
+  ul, ol { page-break-inside: avoid; }
+
+  /* Pas d'image d'arrière-plan */
+  * { background-image: none !important; }
+
+  /* Forcer l'impression des couleurs d'accent sur les pastilles */
+  .phase-tag {
+    background: #e6efff !important;
+    color: #103a85 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .soft-skill {
+    border-left: 3px solid #1a4ea8 !important;
+  }
+
+  /* Forcer la pagination propre */
+  h2 { page-break-after: avoid; }
+  h3, h4 { page-break-after: avoid; }
+}

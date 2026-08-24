@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christophe Mpaga — AI Engineer</title>
+  <meta name="description" content="Portfolio AI Engineer : conception, industrialisation et déploiement d'agents IA en production (santé, GCP, conteneurisation, MLOps)." />
+  <meta name="author" content="Christophe Mpaga" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/print.css" media="print" />
+
+  <!-- Favicon (SVG inline, évite 404) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='32' font-weight='700' fill='white'%3EAI%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ==================================================================
+       Header / Navigation
+       ================================================================== -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#hero" class="brand">Christophe Mpaga</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#soft-skills">Savoir-être</a></li>
+        <li><a href="#education">Formation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Basculer le thème clair/sombre">
+        <span aria-hidden="true">🌓</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================================================================
+         Hero
+         ================================================================== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="container">
+        <p class="eyebrow">Portfolio · AI Engineer</p>
+        <h1 id="heroTitle">Christophe Mpaga</h1>
+        <p class="tagline">
+          Concevoir, industrialiser et déployer des agents IA en production.
+        </p>
+        <div class="meta">
+          <span>📍 Rouen, France</span>
+          <span>🟢 Disponible — Mobilité France</span>
+          <span>🩺 Domaine : santé · production</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Me contacter</a>
+          <a class="btn btn-ghost" href="#projects">Voir les projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         À propos
+         ================================================================== -->
+    <section id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <h2 id="aboutTitle">À propos</h2>
+        <p class="section-lede">
+          AI Engineer issu d'une formation OpenClassrooms, spécialisé dans la
+          conception et l'industrialisation d'agents IA pour des contextes à
+          forts enjeux. J'interviens sur toute la chaîne : cadrage métier, choix
+          de modèle, fine-tuning, containerisation, déploiement cloud (GCP) et
+          monitoring. Mon obsession : transformer un POC fragile en produit
+          fiable, observable et conforme — jamais l'inverse.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 class="card-title">Cadrage &amp; besoin métier</h3>
+            <p>Collecte des besoins, audit de solutions, choix techniques,
+              alignement avec les contraintes réglementaires (santé, données).</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Industrialisation</h3>
+            <p>Architecture modulaire conteneurisée, fine-tuning LLM, packaging,
+              pipeline CI/CD, optimisation GPU.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Production &amp; monitoring</h3>
+            <p>Déploiement Cloud Run / Vertex AI, intégration SIH (FHIR),
+              monitoring de drift, tests red-team, observabilité MLflow.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Compétences
+         ================================================================== -->
+    <section id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <h2 id="skillsTitle">Compétences</h2>
+        <p class="section-lede">
+          Stack opérationnelle autour de quatre piliers : DevOps (software
+          engineering), MLOps (modèles), AIOps (applications IA), CloudOps (infra).
+        </p>
+
+        <div class="grid-2" id="skillsGrid">
+          <!-- Rempli par JS depuis data/portfolio.json -->
+        </div>
+
+        <h3 style="margin-top:2rem">Data &amp; ML</h3>
+        <div class="skill-group">
+          <p class="skill-desc">
+            Frameworks et bibliothèques utilisés pour l'entraînement, l'évaluation
+            et l'inférence.
+          </p>
+          <div class="skill-list" id="dataMlSkills">
+            <!-- Rempli par JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Projets
+         ================================================================== -->
+    <section id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <h2 id="projectsTitle">Projets</h2>
+        <p class="section-lede">
+          Du cadrage métier à la livraison : un projet phare en contexte
+          hospitalier, le projet de fine-tuning qui m'a fait tomber dans la
+          modularité conteneurisée, et les expérimentations complémentaires.
+        </p>
+
+        <!-- ===== Projet 1 : CHSA ===== -->
+        <article class="card" id="project-chsa">
+          <h3 class="card-title">🏥 Agent d'accueil hospitalier CHSA</h3>
+          <p class="card-meta">
+            <strong>Rôle :</strong> AI Engineer (chef de projet technique) ·
+            <strong>Domaine :</strong> santé, urgence
+          </p>
+
+          <p>
+            <strong>Contexte :</strong> centre hospitalier — orientation rapide et
+            précise des patients au service d'accueil et d'orientation des
+            urgences, pour résorber la surcharge des services d'urgence.
+          </p>
+
+          <h4>Démarche</h4>
+          <ul class="checklist">
+            <li>Collecte des besoins métiers et analyse du contexte d'organisation</li>
+            <li>Audit de solutions data pour vérifier l'adéquation (flexibilité,
+                rapidité, scalabilité, finesse technologique, observabilité)</li>
+            <li>Identification d'une solution technique : agent IA (chatbot) +
+                interface décisionnelle</li>
+            <li>Appui stratégique et méthodologique — cadrage projet, planification POC → MVP → PROD</li>
+            <li>Contrôle du projet en termes de délais, coûts, livrables et performances</li>
+          </ul>
+
+          <h4 style="margin-top:1.25rem">Cadrage POC → MVP → PROD</h4>
+          <div class="table-wrapper" style="overflow-x:auto">
+            <table class="phase-table" aria-label="Cadrage des phases du projet CHSA">
+              <thead>
+                <tr>
+                  <th>Phase</th>
+                  <th>Délais</th>
+                  <th>Coûts</th>
+                  <th>Livrables</th>
+                  <th>Performances visées</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="phase-tag">POC</span></td>
+                  <td>~4 semaines</td>
+                  <td>500–700 €/mois</td>
+                  <td>
+                    <ul>
+                      <li>Modèle Qwen3-1.7B-Base</li>
+                      <li>Dataset 5k bilingue</li>
+                      <li>CI/CD + anonymisation</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Triage 88 %</li>
+                      <li>Latence p95 &lt; 1 s</li>
+                      <li>Précision &gt; 95 %</li>
+                      <li>Robuste aux hallucinations</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="phase-tag">MVP</span></td>
+                  <td>~3–6 mois</td>
+                  <td>Modérés (optimisation GPU)</td>
+                  <td>
+                    <ul>
+                      <li>Modèle validé cliniquement</li>
+                      <li>Dashboard MLflow</li>
+                      <li>Logs d'audit système</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Précision &gt; 95 %</li>
+                      <li>Robuste aux hallucinations</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="phase-tag">PROD</span></td>
+                  <td>~6–12 mois +</td>
+                  <td>Élevés (scalabilité + disponibilité)</td>
+                  <td>
+                    <ul>
+                      <li>Système multi-agent</li>
+                      <li>Intégration SIH (FHIR)</li>
+                      <li>Monitoring de drift</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Disponibilité 99,9 %</li>
+                      <li>Sécurité totale</li>
+                      <li>Latence métier &lt; 500 ms</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Analyse de transition</h4>
+          <div class="grid-2">
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Du POC au MVP</h4>
+              <p style="margin:0;color:var(--text-muted)">L'effort bascule de la <em>faisabilité</em> vers la <em>fiabilité</em>.</p>
+              <ul class="checklist" style="margin-top:.5rem">
+                <li><strong>Données :</strong> enrichir avec des cas d'urgence validés par des experts cliniques</li>
+                <li><strong>Sécurité :</strong> tests automatisés (red-teaming) pour bloquer les hallucinations dangereuses</li>
+                <li><strong>Observabilité :</strong> monitoring réel via MLflow pour suivre la dérive en conditions réelles</li>
+              </ul>
+            </div>
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Du MVP à la Production</h4>
+              <p style="margin:0;color:var(--text-muted)">L'enjeu devient la <em>disponibilité</em> et l'<em>intégration</em>.</p>
+              <ul class="checklist" style="margin-top:.5rem">
+                <li><strong>Interopérabilité :</strong> communication avec le SIH via HL7 / FHIR — middleware complexe</li>
+                <li><strong>Infra :</strong> passage à une architecture multi-région pour la haute disponibilité</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 style="margin-top:1.5rem">Architecture livrée (modulaire conteneurisée)</h4>
+          <pre class="mermaid" id="diagram-modular">
+flowchart LR
+  USER((Utilisateur)) --> UI[UI · Gradio]
+  UI -->|REST| API[API · FastAPI]
+  API -->|HTTP| VLLM[vLLM + Qwen3-1.7B FT]
+  VLLM -.->|cold start| GCS[(GCS · poids du modèle)]
+  classDef container fill:#eef,stroke:#446,stroke-width:1px;
+  classDef store fill:#efe,stroke:#464,stroke-width:1px;
+  class UI,API,VLLM container;
+  class GCS store;
+          </pre>
+
+          <h4>Architecture cible (agentique)</h4>
+          <pre class="mermaid" id="diagram-agentic">
+flowchart LR
+  USER((Utilisateur)) --> UI[UI adaptative]
+  UI --> ORCH[Orchestrateur · LangGraph]
+  ORCH --> BRAIN[Cerveau LLM · Qwen3 FT]
+  ORCH --> TOOLS[/Outils : API métier, Anonymisation, Logging, Dispo lits/personnels, Classifieur court-circuit/]
+  TOOLS --> SIH[(SIH · FHIR)]
+  BRAIN --> ORCH
+  classDef agent fill:#eef,stroke:#446,stroke-width:1px;
+  classDef tools fill:#fee,stroke:#a44,stroke-width:1px;
+  classDef store fill:#efe,stroke:#464,stroke-width:1px;
+  class UI,ORCH,BRAIN agent;
+  class TOOLS tools;
+  class SIH store;
+          </pre>
+
+          <div class="badge-row" aria-label="Stack technique du projet CHSA">
+            <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python 3.11" />
+            <img src="https://img.shields.io/badge/Docker-Multi--stage-2496ED?logo=docker&logoColor=white" alt="Docker" />
+            <img src="https://img.shields.io/badge/vLLM-Inference-f18e1f" alt="vLLM" />
+            <img src="https://img.shields.io/badge/Qwen3-1.7B-000?logo=alibabacloud&logoColor=white" alt="Qwen3" />
+            <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
+            <img src="https://img.shields.io/badge/Gradio-UI-fb7c00" alt="Gradio" />
+            <img src="https://img.shields.io/badge/Cloud_Run-GCP-4285F4?logo=googlecloud&logoColor=white" alt="Cloud Run" />
+            <img src="https://img.shields.io/badge/Cloud_Storage-GCS-4285F4?logo=googlecloud&logoColor=white" alt="GCS" />
+            <img src="https://img.shields.io/badge/MLflow-0194e2?logo=mlflow&logoColor=white" alt="MLflow" />
+          </div>
+
+          <p style="margin-top:1rem">
+            🔗 <a href="#" aria-label="TODO: lien GitHub">Dépôt GitHub ([A_COMPLETER_URL])</a>
+          </p>
+        </article>
+
+        <!-- ===== Projet 2 : Fine-tuning LLM ===== -->
+        <article class="card" id="project-finetune">
+          <h3 class="card-title">🧠 Fine-tuning d'un LLM (Qwen3-1.7B)</h3>
+          <p class="card-meta">
+            <strong>Rôle :</strong> AI Engineer · <strong>Sujet :</strong> fine-tuning + serving d'un LLM open-source
+          </p>
+
+          <p>
+            <strong>Point de départ :</strong> design monolithique conteneurisé pour
+            contenir toutes les briques du projet dans un seul conteneur.
+          </p>
+
+          <h4>Highlights</h4>
+          <ul class="checklist">
+            <li>Échecs successifs de déploiement (vLLM dépassait le timeout ~240 s de Cloud Run)</li>
+            <li>Refactor vers une architecture modulaire multi-stage :
+                vLLM + modèle dans un conteneur, FastAPI dans un autre, UI dans un troisième,
+                orchestrés via Cloud Run (GCP)</li>
+            <li>Stockage des poids sur GCS — téléchargement à froid au démarrage</li>
+            <li>Bilan : modularité → découplage, observabilité, itération indépendante par brique</li>
+          </ul>
+
+          <h4>Évolutions proposées</h4>
+          <ul class="checklist">
+            <li>Fusionner API + UI en un seul module pour alléger à 2 modules conteneurisés</li>
+            <li>Ajouter une base SQL pour la persistance des logs</li>
+            <li>Migrer l'UI de Streamlit vers React.js</li>
+            <li>Adopter une architecture agentique : cerveau LLM + orchestrateur
+                LangGraph + outils (API, anonymisation, logging, suivi
+                disponibilités lits/personnels, classifieur court-circuit)</li>
+          </ul>
+
+          <div class="badge-row" aria-label="Stack technique du projet fine-tuning">
+            <img src="https://img.shields.io/badge/vLLM-Inference-f18e1f" alt="vLLM" />
+            <img src="https://img.shields.io/badge/Qwen3-1.7B-000?logo=alibabacloud&logoColor=white" alt="Qwen3" />
+            <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python 3.11" />
+            <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
+            <img src="https://img.shields.io/badge/Gradio-UI-fb7c00" alt="Gradio" />
+            <img src="https://img.shields.io/badge/Docker-Multi--stage-2496ED?logo=docker&logoColor=white" alt="Docker" />
+            <img src="https://img.shields.io/badge/Cloud_Run-GCP-4285F4?logo=googlecloud&logoColor=white" alt="Cloud Run" />
+          </div>
+
+          <p style="margin-top:1rem">
+            🔗 <a href="#" aria-label="TODO: lien GitHub">Dépôt GitHub ([A_COMPLETER_URL])</a>
+          </p>
+        </article>
+
+        <!-- ===== Projet 3 : Autres ===== -->
+        <article class="card" id="project-other">
+          <h3 class="card-title">🧪 Projets additionnels (formation)</h3>
+          <p class="card-meta">
+            Exercices et projets additionnels menés au cours de la formation
+            AI Engineer.
+          </p>
+          <div class="grid-2">
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Projet additionnel #1</h4>
+              <p style="margin:0 0 .5rem;color:var(--text-muted)">
+                TODO_DESCRIPTION
+              </p>
+              <a href="#">🔗 Dépôt GitHub ([A_COMPLETER_URL])</a>
+            </div>
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Projet additionnel #2</h4>
+              <p style="margin:0 0 .5rem;color:var(--text-muted)">
+                TODO_DESCRIPTION
+              </p>
+              <a href="#">🔗 Dépôt GitHub ([A_COMPLETER_URL])</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Savoir-être (soft skills)
+         ================================================================== -->
+    <section id="soft-skills" aria-labelledby="softSkillsTitle">
+      <div class="container">
+        <h2 id="softSkillsTitle">Savoir-être</h2>
+        <p class="section-lede">
+          Au-delà des outils : comment je travaille, illustré par des situations
+          concrètes issues de la formation.
+        </p>
+
+        <div class="soft-skill">
+          <h4>Esprit d'analyse et résolution de problèmes</h4>
+          <p>Diagnostic de l'échec de déploiement du conteneur monolithique :
+            audit du démarrage, identification du dépassement de timeout vLLM
+            (~240 s), décision de migrer vers une architecture modulaire.</p>
+        </div>
+        <div class="soft-skill">
+          <h4>Curiosité intellectuelle et apprentissage continu</h4>
+          <p>Exploration proactive de vLLM, LangGraph, FastAPI cloud run, Vertex AI
+            au-delà du périmètre strict des cours.</p>
+        </div>
+        <div class="soft-skill">
+          <h4>Vulgarisation de concepts IA complexes</h4>
+          <p>Enseignement du ML et de l'IA auprès d'étudiants M1/M2 sans bagage
+            technique initial.</p>
+        </div>
+        <div class="soft-skill">
+          <h4>Autonomie et gestion de projet</h4>
+          <p>Conduite du projet CHSA en autonomie complète — du cadrage à la
+            livraison du POC — avec gestion des délais, coûts, livrables et KPIs.</p>
+        </div>
+        <div class="soft-skill">
+          <h4>Créativité et pensée out-of-the-box</h4>
+          <p>Proposition d'une architecture agentique (cerveau LLM + orchestrateur
+            LangGraph + outils) en alternative au pipeline linéaire.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Expérience d'enseignement + Formation
+         ================================================================== -->
+    <section id="education" aria-labelledby="educationTitle">
+      <div class="container">
+        <h2 id="educationTitle">Parcours &amp; Formation</h2>
+        <p class="section-lede">
+          Formation continue, double compétence data/IA et pédagogique.
+        </p>
+
+        <h3>Expériences d'enseignement</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Enseignant — Mathématiques</h3>
+            <p class="meta">CAP / BP · Pédagogie et vulgarisation</p>
+            <p>Mathématiques appliquées, structuration de progressions pour des
+              publics en formation professionnelle.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Enseignant — Bases de données</h3>
+            <p class="meta">M1, M2 · Modélisation, SQL, conception de schémas</p>
+            <p>Enseignement théorique et pratique à un public de niveau Master.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Enseignant — Machine Learning &amp; Intelligence Artificielle</h3>
+            <p class="meta">M1, M2 · ML supervisé / non supervisé, introduction à l'IA</p>
+            <p>Vulgarisation auprès d'étudiants non spécialistes.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:2rem">Formation &amp; certifications</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Parcours AI Engineer</h3>
+            <p class="meta">OpenClassrooms · 2025–2026</p>
+            <ul class="checklist">
+              <li>Cadrage de projets d'ingénierie IA</li>
+              <li>DevOps / MLOps / AIOps</li>
+              <li>Frameworks ML et théorie</li>
+              <li>Déploiement conteneurisé (Docker, Cloud Run)</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3>Diplômes antérieurs</h3>
+            <p class="meta">TODO_DIPLOMA_INFO</p>
+            <p>TODO_DIPLOMA_DETAILS</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Certifications</h3>
+            <p class="meta">[A_COMPLETER_URL] — GCP, AWS, Kubernetes, etc.</p>
+            <p>Aucune certification renseignée pour le moment — à compléter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Engagement Éthique et Conformité ===== -->
+    <section id="ethics" aria-labelledby="ethicsTitle">
+      <div class="container">
+        <h2 id="ethicsTitle">Engagement Éthique et Conformité</h2>
+        <div id="ethicsContent">
+          <!-- Rempli par JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Contact
+         ================================================================== -->
+    <section id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <h2 id="contactTitle">Contact</h2>
+        <p class="section-lede">
+          Disponible pour des missions, collaborations ou échanges techniques.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:christophempaga@gmail.com" id="emailCard">
+            <span class="label">Email</span>
+            <span class="value" id="emailValue">christophempaga@gmail.com</span>
+            <button class="copy-btn" id="copyEmail" type="button">Copier</button>
+          </a>
+          <a class="contact-card" href="https://github.com/[A_COMPLETER_URL]" id="githubCard" target="_blank" rel="noopener noreferrer">
+            <span class="label">GitHub</span>
+            <span class="value">github.com/[A_COMPLETER_URL]</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/[A_COMPLETER_URL]" id="linkedinCard" target="_blank" rel="noopener noreferrer">
+            <span class="label">LinkedIn</span>
+            <span class="value">linkedin.com/in/[A_COMPLETER_URL]</span>
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© <span id="year"></span> Christophe Mpaga · Portfolio AI Engineer ·
+      Conçu en HTML/CSS/JS statique, déployable sur GitHub Pages.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    /* ----------------------------------------------------------------
+       1. Année dynamique
+       ---------------------------------------------------------------- */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ----------------------------------------------------------------
+       2. Toggle thème (light / dark / auto)
+       ---------------------------------------------------------------- */
+    (function () {
+      const STORAGE_KEY = "portfolio-theme";
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+
+      function apply(theme) {
+        if (theme === "light" || theme === "dark") {
+          root.setAttribute("data-theme", theme);
+        } else {
+          root.removeAttribute("data-theme"); // back to system pref
+        }
+      }
+
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) apply(saved);
+
+      btn.addEventListener("click", function () {
+        const current = root.getAttribute("data-theme");
+        let next;
+        if (!current) {
+          // currently following system ; switch to explicit opposite of prefers-color-scheme
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          next = prefersDark ? "light" : "dark";
+        } else if (current === "dark") {
+          next = "light";
+        } else {
+          next = "dark";
+        }
+        apply(next);
+        localStorage.setItem(STORAGE_KEY, next);
+      });
+    })();
+
+    /* ----------------------------------------------------------------
+       3. Compétences : injection depuis data/portfolio.json
+          (fetch inline pour fonctionner en local via http.server)
+       ---------------------------------------------------------------- */
+    (function () {
+      const grid = document.getElementById("skillsGrid");
+      const dataMl = document.getElementById("dataMlSkills");
+      if (!grid) return;
+
+      // Mapping nom -> badge shields.io (couleur neutre, label lisible)
+      const badge = (name) => {
+        // Palette de couleurs déterministe selon la 1ère lettre
+        const palette = ["3178C6", "5C2D91", "B23A48", "006B3F", "264D8C", "6B4226"];
+        const i = name.charCodeAt(0) % palette.length;
+        const color = palette[i];
+        const safe = encodeURIComponent(name);
+        return `https://img.shields.io/badge/${safe}-${color}?style=flat-square`;
+      };
+
+      const PILLARS = ["devops", "mlops", "aiops", "cloudops"];
+
+      function renderSkills() {
+        if (!window.PORTFOLIO || !window.PORTFOLIO.skills) {
+          grid.innerHTML = '<div class="todo-banner"><strong>⚠</strong> Impossible de charger <code>data/portfolio.json</code>. Servir via <code>http.server</code>.</div>';
+          return;
+        }
+        const skills = window.PORTFOLIO.skills;
+
+        PILLARS.forEach((key) => {
+          const grp = skills[key];
+          if (!grp) return;
+          const card = document.createElement("div");
+          card.className = "skill-group";
+          card.innerHTML = `
+            <h3>${grp.label}</h3>
+            <p class="skill-desc">${grp.description}</p>
+            <div class="skill-list">
+              ${grp.tools.map(t => `
+                <span class="skill-pill" title="${t.name} · ${t.level}">
+                  <img src="${badge(t.name)}" alt="${t.name}" />
+                  <span>${t.name}</span>
+                  <span class="level">${t.level}</span>
+                </span>
+              `).join("")}
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        // Data & ML
+        const dml = skills.data_ml;
+        if (dml && dataMl) {
+          dataMl.innerHTML = dml.tools.map(t => `
+            <span class="skill-pill" title="${t.name} · ${t.level}">
+              <img src="${badge(t.name)}" alt="${t.name}" />
+              <span>${t.name}</span>
+              <span class="level">${t.level}</span>
+            </span>
+          `).join("");
+        }
+      }
+
+      // Render Ethics
+      function renderEthics() {
+        if (!window.PORTFOLIO || !window.PORTFOLIO.ethics) return;
+        const ethics = window.PORTFOLIO.ethics;
+        const container = document.getElementById("ethicsContent");
+        if (!container) return;
+        
+        container.innerHTML = `
+          <p>${ethics.content}</p>
+          <ul class="checklist">
+            ${ethics.points.map(p => `<li>${p}</li>`).join("")}
+          </ul>
+        `;
+      }
+
+      // Fetch JSON (depuis serveur local) OU fallback embarqué inline
+      fetch("data/portfolio.json")
+        .then((r) => r.ok ? r.json() : Promise.reject())
+        .then((data) => {
+          window.PORTFOLIO = data;
+          renderSkills();
+          renderEthics();
+        })
+        .catch(() => {
+          // Fallback : injecte un JSON minimal embarqué pour fonctionner via file://
+          window.PORTFOLIO = { skills: { devops: null, mlops: null, aiops: null, cloudops: null, data_ml: null } };
+          renderSkills();
+          grid.insertAdjacentHTML("afterbegin",
+            '<div class="todo-banner"><strong>ℹ</strong> <code>data/portfolio.json</code> non chargé (file://). Servir via <code>python3 -m http.server</code> pour voir les compétences dynamiques.</div>'
+          );
+        });
+    })();
+
+    /* ----------------------------------------------------------------
+       4. Bouton "Copier" pour l'email
+       ---------------------------------------------------------------- */
+    (function () {
+      const btn = document.getElementById("copyEmail");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("emailValue").textContent.trim();
+        if (!email || email === "[A_COMPLETER_URL]") return;
+        navigator.clipboard?.writeText(email);
+        const original = btn.textContent;
+        btn.textContent = "Copié ✓";
+        btn.classList.add("copied");
+        setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+      });
+    })();
+  </script>
+
+  <!-- Mermaid (rendu des diagrammes) -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default",
+        securityLevel: "loose",
+        flowchart: { useMaxWidth: true, htmlLabels: true },
+      });
+      // Re-init si le thème change
+      document.getElementById("themeToggle")?.addEventListener("click", () => {
+        setTimeout(() => {
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "default",
+            securityLevel: "loose",
+          });
+          document.querySelectorAll(".mermaid").forEach((el) => {
+            const graph = el.textContent;
+            el.removeAttribute("data-processed");
+            el.innerHTML = graph;
+            mermaid.run({ nodes: [el] });
+          });
+        }, 50);
+      });
+    }
+  </script>
+</body>
+</html>
