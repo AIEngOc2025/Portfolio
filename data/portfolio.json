@@ -126,7 +126,7 @@
         "Migrer l'UI de Streamlit vers React.js",
         "Architecture agentique cible : cerveau LLM + orchestrateur LangGraph + outils"
       ],
-      "github_url": "https://github.com/AIEngOc2025/agent-triage-hospitalier.git",
+      "github_url": "[A_COMPLETER_URL]",
       "stack": ["vLLM", "Qwen3-1.7B-Base", "FastAPI", "Gradio", "Python 3.11", "Docker (multi-stage)", "Google Cloud Run", "Google Cloud Storage"]
     },
     {
