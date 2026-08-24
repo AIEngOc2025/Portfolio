@@ -1,5 +1,22 @@
-*.pptx
-*.docx
+
+# Environnements virtuels et dépendances
+.venv/
+.python-version
+uv.lock
+
+# Fichiers systèmes et temporaires
+.DS_Store
+*.pyc
+__pycache__/
+
+
+# Fichiers Word temporaires (les fichiers commençant par ~$)
+~$*
+
+# Scripts de génération (optionnel, si vous ne voulez pas les publier)
 create_portfolio_presentation.py
 create_presentation.py
-.venv
+apply_font.py
+revise_docx.py
+read_docx.py
+add_ethics_to_docx.py
