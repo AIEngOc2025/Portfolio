@@ -7,8 +7,8 @@
     "availability": "Disponible — Mobilité France",
     "email": "christophempaga@gmail.com",
     "github": "https://github.com/AIEngOc2025",
-    "linkedin": "[A_COMPLETER_URL]",
-    "summary": "AI Engineer issu d'une formation OpenClassrooms, spécialisé dans la conception et l'industrialisation d'agents IA pour des contextes à forts enjeux. J'interviens sur toute la chaîne : cadrage métier, choix de modèle, fine-tuning, containerisation, déploiement cloud (GCP) et monitoring. Mon obsession : transformer un POC fragile en produit fiable, observable et conforme.",
+    "linkedin": "https://www.linkedin.com/in/christopheemilempaga/",
+    "summary": "AI Engineer issu d'une formation OpenClassrooms, spécialisé dans la conception et l'industrialisation d'agents IA pour des contextes à forts enjeux. J'interviens sur toute la chaîne : cadrage métier, choix de modèle, fine-tuning, containerisation, déploiement cloud (GCP) et monitoring. Mon objectif: transformer un POC fragile en produit fiable, observable et conforme.",
     "what_i_solve": [
       "Surcharge des services d'urgence via le triage automatisé",
       "Industrialisation de modèles LLM (fine-tuning, packaging, serving)",
@@ -106,7 +106,7 @@
         "poc_to_mvp": ["Données : enrichir avec des cas d'urgence validés par des experts cliniques", "Sécurité : intégrer des tests automatisés (red-teaming) pour bloquer les hallucinations dangereuses", "Observabilité : monitoring réel via MLflow pour suivre la dérive en conditions réelles"],
         "mvp_to_prod": ["Interopérabilité : communication avec le SIH via HL7 / FHIR (middleware complexe)", "Infra : passage à une architecture multi-région pour garantir la haute disponibilité"]
       },
-      "github_url": "[A_COMPLETER_URL]",
+      "github_url": "https://github.com/AIEngOc2025/agent-triage-hospitalier.git",
       "stack": ["vLLM", "Qwen3-1.7B-Base", "FastAPI", "Gradio", "Docker", "Google Cloud Run", "Google Cloud Storage"]
     },
     {
@@ -156,6 +156,18 @@
       ],
       "github_url": "https://github.com/AIEngOc2025/RAG.git",
       "stack": ["FastAPI", "FAISS", "Mistral Small", "PostgreSQL"]
+    },
+    {
+      "id": "mlops-gcp",
+      "name": "MLOps GCP",
+      "role": "AI Engineer",
+      "context": "Projet de déploiement MLOps sur GCP.",
+      "highlights": [
+        "Déploiement d'un modèle ML sur GCP.",
+        "Automatisation CI/CD."
+      ],
+      "github_url": "https://github.com/AIEngOc2025/MLOps-GCP.git",
+      "stack": ["Python", "Docker", "GCP", "CI/CD"]
     }
   ],
   "experience": {
@@ -174,7 +186,7 @@
   ],
   "education": [
     { "name": "Parcours AI Engineer", "school": "OpenClassrooms", "year": "2025-2026", "highlights": ["Cadrage de projets IA", "DevOps/MLOps/AIOps", "Frameworks ML", "Déploiement Docker/Cloud Run"] },
-    { "name": "Diplômes antérieurs", "school": "[A_COMPLETER_DIPLOME]", "year": "[A_COMPLETER_ANNEE]" }
+    { "name": "Diplômes antérieurs", "school": "Université Paris-Sud XI", "year": "2013","highlights":["Master recherche sciences de la Motricité et du sport"] }
   ],
   "certifications": []
 }
