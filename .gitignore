@@ -1,21 +1,28 @@
 
-    1 # Environnements virtuels et dépendances
-    2 .venv/
-    3 .python-version
-    4 uv.lock
-    5
-    6 # Fichiers systèmes et temporaires
-    7 .DS_Store
-    8 *.pyc
-    9 __pycache__/
-   10
-   11 # Fichiers Word temporaires (les fichiers commençant par ~$)
-   12 ~$*
-   13
-   14 # Scripts de génération (optionnel, si vous ne voulez pas les publier)
-   15 create_portfolio_presentation.py
-   16 create_presentation.py
-   17 apply_font.py
-   18 revise_docx.py
-   19 read_docx.py
-   20 add_ethics_to_docx.py
+# Environnements virtuels et dépendances
+.venv/
+.python-version
+uv.lock
+
+# Fichiers systèmes et temporaires
+.DS_Store
+*.pyc
+__pycache__/
+# Fichiers Word temporaires (les fichiers commençant par ~$)
+~$*
+# Scripts de génération (optionnel, si vous ne voulez pas les publier)
+create_portfolio_presentation.py
+create_presentation.py
+apply_font.py
+revise_docx.py
+read_docx.py
+add_ethics_to_docx.py
+python-version 
+.venv/ 
+main.py 
+portfolio.docx 
+~$ints de réflexion sur le portfolio_arial.docx 
+~$rtfolio.docx 
+pyproject.toml 
+uv.lock 
+CLAUDE.md
