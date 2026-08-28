@@ -1,0 +1,25 @@
+# Environnements virtuels et dépendances
+.venv/
+.python-version
+uv.lock
+
+# Fichiers systèmes et temporaires
+.DS_Store
+*.pyc
+__pycache__/
+
+# Fichiers Word temporaires (les fichiers commençant par ~$)
+~$*
+
+# Scripts de génération et artéfacts
+create_portfolio_presentation.py
+create_presentation.py
+apply_font.py
+revise_docx.py
+read_docx.py
+add_ethics_to_docx.py
+*.pptx
+*.docx
+*.zip
+# Exclusion spécifique : conserver uniquement la version finale si besoin
+!Points de réflexion sur le portfolio_arial.docx
