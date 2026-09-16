@@ -413,10 +413,12 @@ flowchart LR
   UI -->|REST| API[API · FastAPI]
   API -->|HTTP| VLLM[vLLM + Qwen3-1.7B FT]
   VLLM -.->|cold start| GCS[(GCS · poids du modèle)]
-  classDef container fill:#eef,stroke:#446,stroke-width:1px;
-  classDef store fill:#efe,stroke:#464,stroke-width:1px;
+  classDef container fill:#1e40af,stroke:#60a5fa,stroke-width:2px,color:#ffffff;
+  classDef store fill:#065f46,stroke:#34d399,stroke-width:2px,color:#ffffff;
+  classDef user fill:#1f2937,stroke:#9ca3af,stroke-width:2px,color:#ffffff;
   class UI,API,VLLM container;
   class GCS store;
+  class USER user;
           </pre>
 
           <h4>Architecture cible (agentique)</h4>
@@ -428,12 +430,14 @@ flowchart LR
   ORCH --> TOOLS[/Outils : API métier, Anonymisation, Logging, Dispo lits/personnels, Classifieur court-circuit/]
   TOOLS --> SIH[(SIH · FHIR)]
   BRAIN --> ORCH
-  classDef agent fill:#eef,stroke:#446,stroke-width:1px;
-  classDef tools fill:#fee,stroke:#a44,stroke-width:1px;
-  classDef store fill:#efe,stroke:#464,stroke-width:1px;
+  classDef agent fill:#1e40af,stroke:#60a5fa,stroke-width:2px,color:#ffffff;
+  classDef tools fill:#991b1b,stroke:#f87171,stroke-width:2px,color:#ffffff;
+  classDef store fill:#065f46,stroke:#34d399,stroke-width:2px,color:#ffffff;
+  classDef user fill:#1f2937,stroke:#9ca3af,stroke-width:2px,color:#ffffff;
   class UI,ORCH,BRAIN agent;
   class TOOLS tools;
   class SIH store;
+  class USER user;
           </pre>
 
           <div class="badge-row" aria-label="Stack technique du projet CHSA">

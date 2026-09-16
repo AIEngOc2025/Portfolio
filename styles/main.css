@@ -404,6 +404,10 @@ ul.checklist li::before {
   text-align: center;
   overflow-x: auto;
 }
+.mermaid .node .nodeLabel {
+  color: #ffffff !important;
+  font-weight: 500;
+}
 .diagram-title {
   font-weight: 600;
   margin-bottom: 0.5rem;
