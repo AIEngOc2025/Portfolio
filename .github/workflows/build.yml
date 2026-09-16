@@ -1,0 +1,46 @@
+name: Build and Sync Portfolio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/portfolio.json'
+      - 'templates/**'
+      - 'build.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Build index.html
+        run: uv run python build.py
+
+      - name: Commit and push changes if index.html was updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet index.html; then
+            git add index.html
+            git commit -m "chore(build): sync index.html from portfolio.json [skip ci]"
+            git push
+          else
+            echo "No changes in index.html to commit."
+          fi

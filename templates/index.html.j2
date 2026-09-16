@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ profile.name }} — {{ profile.title }}</title>
+  <meta name="description" content="Portfolio {{ profile.title }} : conception, industrialisation et déploiement d'agents IA en production (santé, GCP, conteneurisation, MLOps)." />
+  <meta name="author" content="{{ profile.name }}" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/print.css" media="print" />
+
+  <!-- Favicon (SVG inline, évite 404) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='32' font-weight='700' fill='white'%3EAI%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ==================================================================
+       Header / Navigation
+       ================================================================== -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#hero" class="brand">{{ profile.name }}</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#soft-skills">Savoir-être</a></li>
+        <li><a href="#education">Formation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Basculer le thème clair/sombre">
+        <span aria-hidden="true">🌓</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================================================================
+         Hero
+         ================================================================== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="container">
+        <p class="eyebrow">Portfolio · {{ profile.title }}</p>
+        <h1 id="heroTitle">{{ profile.name }}</h1>
+        <p class="tagline">
+          {{ profile.tagline }}
+        </p>
+        <div class="meta">
+          <span>📍 {{ profile.location }}</span>
+          <span>🟢 {{ profile.availability }}</span>
+          <span>🩺 Domaine : {{ profile.domain }}</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Me contacter</a>
+          <a class="btn btn-ghost" href="#projects">Voir les projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         À propos
+         ================================================================== -->
+    <section id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <h2 id="aboutTitle">À propos</h2>
+        <p class="section-lede">
+          {{ profile.summary }}
+        </p>
+
+        <div class="grid-3">
+          {% for p in profile.pillars %}
+          <div class="card">
+            <h3 class="card-title">{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Compétences
+         ================================================================== -->
+    <section id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <h2 id="skillsTitle">Compétences</h2>
+        <p class="section-lede">
+          Stack opérationnelle autour de quatre piliers : DevOps (software
+          engineering), MLOps (modèles), AIOps (applications IA), CloudOps (infra).
+        </p>
+
+        <div class="grid-2" id="skillsGrid">
+          {% for key in ["devops", "mlops", "aiops", "cloudops"] %}
+          {% set grp = skills[key] %}
+          {% if grp %}
+          <div class="skill-group">
+            <h3>{{ grp.label }}</h3>
+            <p class="skill-desc">{{ grp.description }}</p>
+            <div class="skill-list">
+              {% for t in grp.tools %}
+              <span class="skill-pill" title="{{ t.name }} · {{ t.level }}">
+                <img src="{{ t.name | skill_badge }}" alt="{{ t.name }}" />
+                <span>{{ t.name }}</span>
+                <span class="level">{{ t.level }}</span>
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <h3 style="margin-top:2rem">Data &amp; ML</h3>
+        <div class="skill-group">
+          <p class="skill-desc">
+            {{ skills.data_ml.description }}
+          </p>
+          <div class="skill-list" id="dataMlSkills">
+            {% for t in skills.data_ml.tools %}
+            <span class="skill-pill" title="{{ t.name }} · {{ t.level }}">
+              <img src="{{ t.name | skill_badge }}" alt="{{ t.name }}" />
+              <span>{{ t.name }}</span>
+              <span class="level">{{ t.level }}</span>
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Projets
+         ================================================================== -->
+    <section id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <h2 id="projectsTitle">Projets</h2>
+        <p class="section-lede">
+          Du cadrage métier à la livraison : un projet phare en contexte
+          hospitalier, le projet de fine-tuning qui m'a fait tomber dans la
+          modularité conteneurisée, et les expérimentations complémentaires.
+        </p>
+
+        <!-- ===== Projet 1 : developpement d'un agent autonome pour le Centre Hospitalier Saint-Aurelien ===== -->
+        {% set chsa = projects | selectattr('id', 'equalto', 'chsa-triage-agent') | first %}
+        {% if chsa %}
+        <article class="card" id="project-chsa">
+          <h3 class="card-title">🏥 {{ chsa.name }}</h3>
+          <p class="card-meta">
+            <strong>Rôle :</strong> {{ chsa.role }} ·
+            <strong>Domaine :</strong> {{ chsa.domain | default("santé, urgence") }}
+          </p>
+
+          <p>
+            <strong>Contexte :</strong> {{ chsa.context }}
+          </p>
+
+          <h4>Démarche</h4>
+          <ul class="checklist">
+            {% for step in chsa.approach %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ul>
+
+          <h4 style="margin-top:1.25rem">Cadrage POC → MVP → PROD</h4>
+          <div class="table-wrapper" style="overflow-x:auto">
+            <table class="phase-table" aria-label="Cadrage des phases du projet CHSA">
+              <thead>
+                <tr>
+                  <th>Phase</th>
+                  <th>Délais</th>
+                  <th>Coûts</th>
+                  <th>Livrables</th>
+                  <th>Performances visées</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for phase_key, phase_data in chsa.deliverables.items() %}
+                <tr>
+                  <td><span class="phase-tag">{{ phase_key }}</span></td>
+                  <td>{{ phase_data.duration }}</td>
+                  <td>{{ phase_data.cost }}</td>
+                  <td>
+                    <ul>
+                      {% for out in phase_data.outputs %}
+                      <li>{{ out }}</li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      {% for kpi in phase_data.kpis %}
+                      <li>{{ kpi }}</li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Analyse de transition</h4>
+          <div class="grid-2">
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Du POC au MVP</h4>
+              <p style="margin:0;color:var(--text-muted)">L'effort bascule de la <em>faisabilité</em> vers la <em>fiabilité</em>.</p>
+              <ul class="checklist" style="margin-top:.5rem">
+                {% for note in chsa.transition_notes.poc_to_mvp %}
+                {% set parts = note.split(' : ') %}
+                <li><strong>{{ parts[0] }} :</strong> {{ parts[1] }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">Du MVP à la Production</h4>
+              <p style="margin:0;color:var(--text-muted)">L'enjeu devient la <em>disponibilité</em> et l'<em>intégration</em>.</p>
+              <ul class="checklist" style="margin-top:.5rem">
+                {% for note in chsa.transition_notes.mvp_to_prod %}
+                {% set parts = note.split(' : ') %}
+                <li><strong>{{ parts[0] }} :</strong> {{ parts[1] }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <h4 style="margin-top:1.5rem">Architecture livrée (modulaire conteneurisée)</h4>
+          <pre class="mermaid" id="diagram-modular">
+{{ architecture_diagrams.modular }}
+          </pre>
+
+          <h4>Architecture cible (agentique)</h4>
+          <pre class="mermaid" id="diagram-agentic">
+{{ architecture_diagrams.agentic }}
+          </pre>
+
+          <div class="badge-row" aria-label="Stack technique du projet CHSA">
+            {% for tech in chsa.stack %}
+            <img src="{{ tech | stack_badge }}" alt="{{ tech }}" />
+            {% endfor %}
+          </div>
+
+          <p style="margin-top:1rem">
+            🔗 <a href="{{ chsa.github_url }}" aria-label="Lien GitHub projet CHSA">Dépôt GitHub (agent-triage-hospitalier)</a>
+          </p>
+        </article>
+        {% endif %}
+
+        <!-- ===== Projet 2 : Fine-tuning LLM ===== -->
+        {% set finetune = projects | selectattr('id', 'equalto', 'finetune-llm-qwen') | first %}
+        {% if finetune %}
+        <article class="card" id="project-finetune">
+          <h3 class="card-title">🧠 {{ finetune.name }}</h3>
+          <p class="card-meta">
+            <strong>Rôle :</strong> {{ finetune.role }} · <strong>Sujet :</strong> fine-tuning + serving d'un LLM open-source
+          </p>
+
+          <p>
+            <strong>Point de départ :</strong> design monolithique conteneurisé pour
+            contenir toutes les briques du projet dans un seul conteneur.
+          </p>
+
+          <h4>Highlights</h4>
+          <ul class="checklist">
+            {% for item in finetune.highlights %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+
+          <h4>Évolutions proposées</h4>
+          <ul class="checklist">
+            {% for item in finetune.evolution_proposals %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+
+          <div class="badge-row" aria-label="Stack technique du projet fine-tuning">
+            {% for tech in finetune.stack %}
+            <img src="{{ tech | stack_badge }}" alt="{{ tech }}" />
+            {% endfor %}
+          </div>
+
+          <p style="margin-top:1rem">
+            🔗 <a href="{{ finetune.github_url }}" aria-label="Dépôt GitHub du projet de fine-tuning">Dépôt GitHub (agent-triage-hospitalier)</a>
+          </p>
+        </article>
+        {% endif %}
+
+        <!-- ===== Projet 3 : Autres ===== -->
+        <article class="card" id="project-other">
+          <h3 class="card-title">🧪 Projets additionnels (formation)</h3>
+          <p class="card-meta">
+            Exercices et projets additionnels menés au cours de la formation
+            AI Engineer.
+          </p>
+          <div class="grid-2">
+            {% for p in projects %}
+            {% if p.id not in ['chsa-triage-agent', 'finetune-llm-qwen'] %}
+            <div class="card" style="margin:0">
+              <h4 style="margin:0 0 .4rem">{{ p.name }}</h4>
+              <p style="margin:0 0 .5rem;color:var(--text-muted)">
+                {% if p.highlights %}
+                {{ p.highlights[0] }}
+                {% else %}
+                {{ p.context }}
+                {% endif %}
+              </p>
+              <a href="{{ p.github_url }}">🔗 Dépôt GitHub ({{ p.name }})</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Savoir-être (soft skills)
+         ================================================================== -->
+    <section id="soft-skills" aria-labelledby="softSkillsTitle">
+      <div class="container">
+        <h2 id="softSkillsTitle">Savoir-être</h2>
+        <p class="section-lede">
+          Au-delà des outils : comment je travaille, illustré par des situations
+          concrètes issues de la formation.
+        </p>
+
+        {% for item in soft_skills %}
+        <div class="soft-skill">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.example }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Expérience d'enseignement + Formation
+         ================================================================== -->
+    <section id="education" aria-labelledby="educationTitle">
+      <div class="container">
+        <h2 id="educationTitle">Parcours &amp; Formation</h2>
+        <p class="section-lede">
+          Formation continue, double compétence data/IA et pédagogique.
+        </p>
+
+        <h3>Expériences d'enseignement</h3>
+        <div class="timeline">
+          {% for exp in experience.teaching %}
+          <div class="timeline-item">
+            <h3>{{ exp.role }}</h3>
+            <p class="meta">{{ exp.meta }}</p>
+            <p>{{ exp.highlights }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <h3 style="margin-top:2rem">Formation &amp; certifications</h3>
+        <div class="timeline">
+          {% for edu in education %}
+          <div class="timeline-item">
+            <h3>{{ edu.name }}</h3>
+            <p class="meta">
+              {{ edu.school }} · {{ edu.year }}{% if edu.highlights and edu.name != 'Parcours AI Engineer' %} — {{ edu.highlights | join(', ') }}{% endif %}
+            </p>
+            {% if edu.name == 'Parcours AI Engineer' and edu.highlights %}
+            <ul class="checklist">
+              {% for h in edu.highlights %}
+              <li>{{ h }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+
+          {% if certifications %}
+          <div class="timeline-item">
+            <h3>Certifications</h3>
+            {% for cert in certifications %}
+            <p class="meta">{{ cert.name }} - {{ cert.year }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Engagement Éthique et Conformité ===== -->
+    <section id="ethics" aria-labelledby="ethicsTitle">
+      <div class="container">
+        <h2 id="ethicsTitle">{{ ethics.title }}</h2>
+        <div id="ethicsContent">
+          <p>{{ ethics.content }}</p>
+          <ul class="checklist">
+            {% for pt in ethics.points %}
+            <li>{{ pt }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         Contact
+         ================================================================== -->
+    <section id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <h2 id="contactTitle">Contact</h2>
+        <p class="section-lede">
+          Disponible pour des missions, collaborations ou échanges techniques.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:{{ profile.email }}" id="emailCard">
+            <span class="label">Email</span>
+            <span class="value" id="emailValue">{{ profile.email }}</span>
+            <button class="copy-btn" id="copyEmail" type="button">Copier</button>
+          </a>
+          <a class="contact-card" href="{{ profile.github }}" id="githubCard" target="_blank" rel="noopener noreferrer">
+            <span class="label">GitHub</span>
+            <span class="value">{{ profile.github | replace('https://', '') }}</span>
+          </a>
+          <a class="contact-card" href="{{ profile.linkedin }}" id="linkedinCard" target="_blank" rel="noopener noreferrer">
+            <span class="label">LinkedIn</span>
+            <span class="value">{{ profile.linkedin | replace('https://www.', '') | replace('https://', '') }}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© <span id="year"></span> {{ profile.name }} · Portfolio {{ profile.title }} ·
+      Conçu en HTML/CSS/JS statique, déployable sur GitHub Pages.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    /* ----------------------------------------------------------------
+       1. Année dynamique
+       ---------------------------------------------------------------- */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ----------------------------------------------------------------
+       2. Toggle thème (light / dark / auto)
+       ---------------------------------------------------------------- */
+    (function () {
+      const STORAGE_KEY = "portfolio-theme";
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+
+      function apply(theme) {
+        if (theme === "light" || theme === "dark") {
+          root.setAttribute("data-theme", theme);
+        } else {
+          root.removeAttribute("data-theme"); // back to system pref
+        }
+      }
+
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) apply(saved);
+
+      btn.addEventListener("click", function () {
+        const current = root.getAttribute("data-theme");
+        let next;
+        if (!current) {
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          next = prefersDark ? "light" : "dark";
+        } else if (current === "dark") {
+          next = "light";
+        } else {
+          next = "dark";
+        }
+        apply(next);
+        localStorage.setItem(STORAGE_KEY, next);
+      });
+    })();
+
+    /* ----------------------------------------------------------------
+       3. Bouton "Copier" pour l'email
+       ---------------------------------------------------------------- */
+    (function () {
+      const btn = document.getElementById("copyEmail");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("emailValue").textContent.trim();
+        if (!email) return;
+        navigator.clipboard?.writeText(email);
+        const original = btn.textContent;
+        btn.textContent = "Copié ✓";
+        btn.classList.add("copied");
+        setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+      });
+    })();
+  </script>
+
+  <!-- Mermaid (rendu des diagrammes) -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default",
+        securityLevel: "loose",
+        flowchart: { useMaxWidth: true, htmlLabels: true },
+      });
+      // Re-init si le thème change
+      document.getElementById("themeToggle")?.addEventListener("click", () => {
+        setTimeout(() => {
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "default",
+            securityLevel: "loose",
+          });
+          document.querySelectorAll(".mermaid").forEach((el) => {
+            const graph = el.textContent;
+            el.removeAttribute("data-processed");
+            el.innerHTML = graph;
+            mermaid.run({ nodes: [el] });
+          });
+        }, 50);
+      });
+    }
+  </script>
+</body>
+</html>

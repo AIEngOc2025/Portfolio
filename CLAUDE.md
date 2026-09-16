@@ -4,45 +4,57 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Vue d'ensemble
 
-Portfolio monopage statique (HTML/CSS/JS pur, **aucune étape de build ni gestionnaire de paquets**) présentant le profil AI Engineer de Christophe Mpaga. Le site charge du contenu dynamique depuis `data/portfolio.json` via `fetch()`, ce qui impose un serveur HTTP local — `file://` ne fonctionne pas.
+Portfolio monopage statique généré via un script Python Jinja2 (`build.py`) présentant le profil AI Engineer de Christophe Mpaga. Les données sont entièrement centralisées dans `data/portfolio.json` (Single Source of Truth), et le rendu statique est généré dans `index.html` via le template `templates/index.html.j2`.
 
-Sections : Hero · À propos · Compétences · Projets (CHSA, fine-tuning LLM, additionnels) · Savoir-être · Parcours & Formation · Contact.
+Sections : Hero · À propos · Compétences · Projets (CHSA, fine-tuning LLM, additionnels) · Savoir-être · Parcours & Formation · Engagement Éthique · Contact.
 
 ## Commandes utiles
 
-### Preview local
+### Générer le site (synchronisation)
 
 ```bash
-cd /Users/mpaga/OC/Portfolio
+uv run python build.py
+```
+
+### Preview local
+
+Ouvrir directement `index.html` dans un navigateur (fonctionne nativement en `file://`), ou via serveur local :
+
+```bash
 python3 -m http.server 8000
 # Ouvrir http://localhost:8000
 ```
 
-### Déploiement
+### Déploiement & Automatisation
 
-Push sur la branche `main` d'un dépôt GitHub, puis Settings → Pages → Source : `Deploy from a branch` → `main` / `root`. Le fichier `.nojekyll` à la racine désactive Jekyll (nécessaire pour les chemins en `.css`/`.json`).
-
-Il n'existe **aucune** commande de build, lint, format, ou test — tout est statique. Pour valider une modification, ouvrir la page dans le navigateur et inspecter visuellement / via DevTools.
+Push sur la branche `main` d'un dépôt GitHub.
+- Le workflow GitHub Actions `.github/workflows/build.yml` s'exécute lors de toute modification sur `data/portfolio.json` ou les templates et met à jour `index.html`.
+- Déploiement automatique sur GitHub Pages (Settings → Pages → Source : `Deploy from a branch` → `main` / `root`).
+- Le fichier `.nojekyll` à la racine désactive Jekyll (nécessaire pour les chemins en `.css`/`.json`).
 
 ## Architecture du code
 
 ```
-index.html              Structure + 4 blocs JS inline (année, thème, compétences, copier-email)
+build.py                Script de génération statique (Jinja2)
+templates/
+  index.html.j2         Template HTML Jinja2 du portfolio
+index.html              Fichier HTML statique généré
 styles/
   main.css              Charte graphique (variables CSS), responsive, dark mode (toggle + prefers-color-scheme)
   print.css             Version imprimable / PDF (Ctrl+P) — ATS-friendly, chargée via media="print"
 data/
-  portfolio.json        Source de données structurée : profil, compétences (5 piliers), projets, parcours
+  portfolio.json        Source unique de vérité : profil, compétences (5 piliers), projets, parcours, éthique
+.github/workflows/
+  build.yml             CI/CD de synchronisation automatique de index.html
 assets/
-  badges/, diagrams/    Dossiers prévus pour exports statiques (actuellement vides)
+  badges/, diagrams/    Dossiers prévus pour exports statiques
 .nojekyll               Désactive Jekyll sur GitHub Pages
 ```
 
 ### Points d'attention structurels
 
-- **`data/portfolio.json` est la source de vérité** pour : `profile`, `skills` (5 piliers : `devops`, `mlops`, `aiops`, `cloudops`, `data_ml`), `projects`, `experience`, `soft_skills`, `education`, `certifications`, `architecture_diagrams`. Tout champ marqué `TODO_USER` doit être renseigné avant publication.
-- Le rendu des compétences (section Skills) est fait par JS : `fetch("data/portfolio.json")` → injection dans `#skillsGrid` et `#dataMlSkills`. Un fallback embarqué gère le cas `file://` en injectant un bandeau d'avertissement.
-- Les sections Projets (CHSA, fine-tuning, additionnels), Savoir-être, Formation et Contact sont **écrites en dur dans `index.html`** — la modification des URLs GitHub/LinkedIn/email se fait à la fois dans `data/portfolio.json` ET dans les attributs `href` des cartes Contact de `index.html`.
+- **`data/portfolio.json` est l'unique source de vérité** pour : `profile`, `skills`, `ethics`, `projects`, `experience`, `soft_skills`, `education`, `certifications`, `architecture_diagrams`.
+- Toute modification doit être faite dans `data/portfolio.json`, puis répercutée dans `index.html` via `uv run python build.py` (ou automatiquement par la CI GitHub Actions).
 - Les diagrammes d'architecture sont des blocs `<pre class="mermaid">` rendus par Mermaid 10 (CDN). Le thème Mermaid est ré-initialisé après chaque toggle de thème clair/sombre.
 - Le toggle de thème utilise `localStorage` (clé `portfolio-theme`) avec valeur `light`/`dark`, sinon suit `prefers-color-scheme`.
 - Les badges de stack sont des images `shields.io` (CDN) ; les badges de compétences sont générés dynamiquement par la fonction `badge(name)` dans le JS inline (palette déterministe basée sur `charCodeAt(0)`).
