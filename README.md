@@ -33,7 +33,7 @@ Issu du parcours **AI Engineer** (OpenClassrooms), j'interviens sur l'ensemble d
 ## 🛠 Stack Technique
 
 - **Langages & Génération** : Python 3.13+ (géré avec `uv`), Jinja2, HTML5 sémantique, CSS3 (variables, responsive, dark/light mode, feuille de style print ATS-friendly), JavaScript Vanilla.
-- **Visualisation & Diagrammes** : [Mermaid.js](https://mermaid.js.org/) pour les architectures dynamiques (modulaire conteneurisée actuelle vs agentique cible LangGraph).
+- **Visualisation & Diagrammes** : [Mermaid.js](https://mermaid.js.org/) pour les architectures dynamiques (architecture POC modulaire conteneurisée vs architecture MVP agentique LangGraph).
 - **MLOps & AIOps** : MLflow, vLLM, Hugging Face Transformers, FAISS, Red-teaming, monitoring de dérive.
 - **Data & ML** : PyTorch, TensorFlow / Keras, Scikit-learn, Pandas, NumPy, spaCy.
 - **Cloud & DevOps** : Docker (multi-stage), Google Cloud Platform (Cloud Run, GCS, Artifact Registry), GitHub Actions, Git.

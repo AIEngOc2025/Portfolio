@@ -133,13 +133,14 @@
         "Architecture initiale monolithique conteneurisée, échec de déploiement (timeout vLLM ~240 s)",
         "Refactor vers une architecture modulaire multi-stage : vLLM + modèle dans un conteneur, FastAPI dans un autre, UI dans un troisième, déployés sur Cloud Run (GCP)",
         "Stockage des poids du modèle sur GCS",
-        "Bilan : la modularité a apporté découplage, observabilité et itération indépendante par brique"
+        "Bilan : la modularité a apporté découplage, observabilité et itération indépendante par brique",
+        "une architecture agentique : cerveau LLM + orchestrateur LangGraph + outils (API, anonymisation, logging, suivi disponibilités lits/personnels, classifieur court-circuit)"
       ],
       "evolution_proposals": [
         "Fusionner API + UI en un seul module pour alléger à 2 modules conteneurisés",
         "Ajouter une base SQL pour la persistance des logs",
         "Migrer l'UI de Streamlit vers React.js",
-        "Adopter une architecture agentique : cerveau LLM + orchestrateur LangGraph + outils (API, anonymisation, logging, suivi disponibilités lits/personnels, classifieur court-circuit)"
+       
       ],
       "github_url": "https://github.com/AIEngOc2025/agent-triage-hospitalier.git",
       "stack": ["vLLM", "Qwen3-1.7B-Base", "FastAPI", "Gradio", "Python 3.11", "Docker (multi-stage)", "Google Cloud Run", "Google Cloud Storage"]
