@@ -473,6 +473,7 @@ flowchart LR
             <li>Refactor vers une architecture modulaire multi-stage : vLLM + modèle dans un conteneur, FastAPI dans un autre, UI dans un troisième, déployés sur Cloud Run (GCP)</li>
             <li>Stockage des poids du modèle sur GCS</li>
             <li>Bilan : la modularité a apporté découplage, observabilité et itération indépendante par brique</li>
+            <li>Adopter une architecture agentique : cerveau LLM + orchestrateur LangGraph + outils (API, anonymisation, logging, suivi disponibilités lits/personnels, classifieur court-circuit)</li>
           </ul>
 
           <h4>Évolutions proposées</h4>
@@ -480,7 +481,6 @@ flowchart LR
             <li>Fusionner API + UI en un seul module pour alléger à 2 modules conteneurisés</li>
             <li>Ajouter une base SQL pour la persistance des logs</li>
             <li>Migrer l'UI de Streamlit vers React.js</li>
-            <li>Adopter une architecture agentique : cerveau LLM + orchestrateur LangGraph + outils (API, anonymisation, logging, suivi disponibilités lits/personnels, classifieur court-circuit)</li>
           </ul>
 
           <div class="badge-row" aria-label="Stack technique du projet fine-tuning">
